@@ -102,6 +102,29 @@ export default {
               redirect: '/welcome',
             },
             {
+              path: '/userManage',
+              name: 'userManage',
+              icon: 'user',
+              routes: [
+                {
+                  path: '/userManage/productor',
+                  name: 'productor',
+                  component: './userManage/productor/index.jsx',
+                },
+                {
+                  path: '/userManage/customer',
+                name: 'userManage',
+                component: './userManage/customer',
+                },
+                {
+                  path: '/userManage/designer',
+                name: 'designer',
+                component: './userManage/designer',
+                },
+              ]
+            },
+
+            {
               path: '/welcome',
               name: 'welcome',
               icon: 'smile',

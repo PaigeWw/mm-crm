@@ -1,20 +1,48 @@
-import React from 'react';
-import { Card, Alert } from 'antd';
+import React ,{useState} from 'react';
+import { Card, Button, Modal } from 'antd';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 
-export default () => (
-  <PageHeaderWrapper>
-    <Card>
-      <Alert
-        message="umi ui 现已发布，欢迎使用 npm run ui 启动体验。"
-        type="success"
-        showIcon
-        banner
-        style={{
-          margin: -12,
-          marginBottom: 24,
+import Form from './Form';
+import TableBasic from './TableBasic'
+import TdTable from './TableBasic/TdTable' 
+
+export default () => {
+  const [visible, setVisible] = useState(false);
+  // const [visible, setVisible] = useState(false);
+  return (
+      <PageHeaderWrapper>
+    <Card
+        title="TD List"
+        extra={
+          <Button type="primary" onClick={() => setVisible(true)}>
+            Add
+          </Button>
+        }
+        style={{marginBottom: "20px"}}
+      >
+      <TdTable/>
+    </Card>
+    <Card
+            title="Customer List"
+            extra={
+              <Button type="primary" onClick={() => setVisible(true)}>
+                Add
+              </Button>
+            }
+            style={{marginBottom: "20px"}}
+    >
+      <TableBasic/>
+    </Card>
+    <Modal
+        title="Basic Modal"
+        visible={visible}
+        onOk={() => {
+          setVisible(false);
         }}
-      />
-      </Card>
+        onCancel={() => setVisible(false)}
+      >
+        <Form/>
+      </Modal>
   </PageHeaderWrapper>
-);
+  )
+}

@@ -20,14 +20,20 @@ const columns = [
     key: 'password',
   },
   {
-    title: 'Alist',
-    key: 'alist',
-    dataIndex: 'alist',
-    render: alist => (
+    title: 'Alists',
+    key: 'alists',
+    dataIndex: 'alists',
+    render: alists => (
       <span>
-            <Tag color="'green'" key={alist}>
+        {alists.map(alist => {
+          let color = alist.length > 5 ? 'geekblue' : 'green';
+
+          return (
+            <Tag color={color} key={alist}>
               {alist.toUpperCase()}
             </Tag>
+          );
+        })}
       </span>
     ),
   },
@@ -49,24 +55,21 @@ const data = [
     name: 'John Brown',
     accent: 'John.Brown@mm.com',
     password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
+    alists: ['A', 'B'],
   },
   {
     key: '2',
     name: 'John Brown',
     accent: 'John.Brown@mm.com',
     password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
+    alists: ['A', 'B'],
   },
   {
     key: '3',
     name: 'John Brown',
     accent: 'John.Brown@mm.com',
     password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
+    alists: ['A', 'B'],
   },
 ];
 export default () => (

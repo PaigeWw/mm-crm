@@ -20,18 +20,6 @@ const columns = [
     key: 'password',
   },
   {
-    title: 'Alist',
-    key: 'alist',
-    dataIndex: 'alist',
-    render: alist => (
-      <span>
-            <Tag color="'green'" key={alist}>
-              {alist.toUpperCase()}
-            </Tag>
-      </span>
-    ),
-  },
-  {
     title: 'Action',
     key: 'action',
     render: (text, record) => (
@@ -49,24 +37,18 @@ const data = [
     name: 'John Brown',
     accent: 'John.Brown@mm.com',
     password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
   },
   {
     key: '2',
     name: 'John Brown',
     accent: 'John.Brown@mm.com',
     password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
   },
   {
     key: '3',
     name: 'John Brown',
     accent: 'John.Brown@mm.com',
     password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
   },
 ];
 export default () => (

@@ -4,32 +4,21 @@ import styles from './index.less';
 
 const columns = [
   {
+    title: 'ID',
+    dataIndex: 'id',
+    key: 'id',
+    render: text => <a>{text}</a>,
+  },
+  {
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
     render: text => <a>{text}</a>,
   },
   {
-    title: 'Accent',
-    dataIndex: 'accent',
-    key: 'accent',
-  },
-  {
-    title: 'Password',
-    dataIndex: 'password',
-    key: 'password',
-  },
-  {
-    title: 'Alist',
-    key: 'alist',
-    dataIndex: 'alist',
-    render: alist => (
-      <span>
-            <Tag color="'green'" key={alist}>
-              {alist.toUpperCase()}
-            </Tag>
-      </span>
-    ),
+    title: 'Date',
+    dataIndex: 'date',
+    key: 'date',
   },
   {
     title: 'Action',
@@ -46,27 +35,21 @@ const columns = [
 const data = [
   {
     key: '1',
+    id: 'M-1',
     name: 'John Brown',
-    accent: 'John.Brown@mm.com',
-    password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
+    date: '2019-12-06',
   },
   {
     key: '2',
+    id: 'M-2',
     name: 'John Brown',
-    accent: 'John.Brown@mm.com',
-    password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
+    date: '2019-12-06',
   },
   {
     key: '3',
+    id: 'M-3',
     name: 'John Brown',
-    accent: 'John.Brown@mm.com',
-    password: 'm123456m',
-    alist: 'A',
-    '下单记录': 'sss',
+    date: '2019-12-06',
   },
 ];
 export default () => (

@@ -113,7 +113,7 @@ export default {
                 },
                 {
                   path: '/userManage/customer',
-                name: 'userManage',
+                name: 'customer',
                 component: './userManage/customer',
                 },
                 {
@@ -123,12 +123,33 @@ export default {
                 },
               ]
             },
-
             {
-              path: '/welcome',
-              name: 'welcome',
+              path: '/productManage',
+              name: 'productManage',
+              icon: 'user',
+              routes: [
+                {
+                  path: '/productManage/productInfo',
+                  name: 'productInfo',
+                  component: './productManage/productInfo/index.jsx',
+                },
+                {
+                  path: '/productManage/trade',
+                name: 'trade',
+                component: './productManage/trade',
+                },
+                {
+                  path: '/productManage/styles',
+                name: 'style',
+                component: './productManage/styles',
+                },
+              ]
+            },
+            {
+              path: '/systemSetup',
+              name: 'systemSetup',
               icon: 'smile',
-              component: './Welcome',
+              component: './systemSetup',
             },
             {
               path: '/admin',

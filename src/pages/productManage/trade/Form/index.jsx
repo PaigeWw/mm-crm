@@ -118,24 +118,33 @@ class RegistrationForm extends React.Component {
         <Option value="87">Bob</Option>
       </Select>,
     );
-    const plainOptions = ['Apple', 'Pear', 'Orange'];
-    const checkedList = ['Apple', 'Orange'];
 
-    const websiteOptions = autoCompleteResult.map(website => (
-      <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-    ));
     return (
       <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-        <Form.Item label="E-mail">
-          {getFieldDecorator('email', {
+        <Form.Item label="商品名称">
+          {getFieldDecorator('商品名称', {
             rules: [
               {
-                type: 'email',
-                message: 'The input is not valid E-mail!',
+                type: 'text',
+                // message: 'The input is not valid E-mail!',
               },
               {
                 required: true,
-                message: 'Please input your E-mail!',
+                message: '请输入商品名称!',
+              },
+            ],
+          })(<Input />)}
+        </Form.Item>    
+        <Form.Item label="商品名称展示名">
+          {getFieldDecorator('商品名称', {
+            rules: [
+              {
+                type: 'text',
+                // message: 'The input is not valid E-mail!',
+              },
+              {
+                required: true,
+                message: '请输入商品名称!',
               },
             ],
           })(<Input />)}

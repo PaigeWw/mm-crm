@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Card, Typography, Divider } from 'antd';
+import { Card, Typography, Divider, Input, Table } from 'antd';
+const InputGroup = Input.Group;
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import TableBasic from './TableBasic';
 import Form from './Form';
@@ -46,7 +47,7 @@ export default () => {
             }
             style={{marginBottom: "20px"}}
           >
-          
+           <TableBasic/>
           </Card>     
       </Card>
      

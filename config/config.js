@@ -103,51 +103,51 @@ export default {
             },
             {
               path: '/userManage',
-              name: 'userManage',
+              name: '用户管理',
               icon: 'user',
               routes: [
                 {
                   path: '/userManage/productor',
-                  name: 'productor',
+                  name: '产品经理',
                   component: './userManage/productor/index.jsx',
                 },
                 {
                   path: '/userManage/customer',
-                name: 'customer',
+                name: '客户',
                 component: './userManage/customer',
                 },
                 {
                   path: '/userManage/designer',
-                name: 'designer',
+                name: '设计人员',
                 component: './userManage/designer',
                 },
               ]
             },
             {
               path: '/productManage',
-              name: 'productManage',
+              name: '产品管理',
               icon: 'user',
               routes: [
                 {
                   path: '/productManage/productInfo',
-                  name: 'productInfo',
+                  name: '产品基础信息',
                   component: './productManage/productInfo/index.jsx',
                 },
                 {
                   path: '/productManage/trade',
-                name: 'trade',
+                name: '商品管理',
                 component: './productManage/trade',
                 },
                 {
                   path: '/productManage/styles',
-                name: 'style',
+                name: '款式管理',
                 component: './productManage/styles',
                 },
               ]
             },
             {
               path: '/systemSetup',
-              name: 'systemSetup',
+              name: '系统设置',
               icon: 'smile',
               component: './systemSetup',
             },

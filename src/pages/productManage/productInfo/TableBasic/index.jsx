@@ -1,40 +1,24 @@
-import React from 'react';
-import { Table, Divider, Tag } from 'antd';
+import React ,{ useState, useEffect}from 'react';
+import { Table, Divider, Input } from 'antd';
+const InputGroup = Input.Group;
 import styles from './index.less';
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: text => <a>{text}</a>,
-  },
-  {
-    title: 'Accent',
-    dataIndex: 'accent',
-    key: 'accent',
-  },
-  {
-    title: 'Password',
-    dataIndex: 'password',
-    key: 'password',
-  },
-  {
-    title: 'Alists',
-    key: 'alists',
-    dataIndex: 'alists',
-    render: alists => (
-      <span>
-        {alists.map(alist => {
-          let color = alist.length > 5 ? 'geekblue' : 'green';
-
-          return (
-            <Tag color={color} key={alist}>
-              {alist.toUpperCase()}
-            </Tag>
+    title: 'Size',
+    key: 'values',
+    dataIndex: 'values',
+    render: values => (
+      <InputGroup>
+        {values.map(value => {
+          return (<>
+            <Input value={value} style={{width:"40px", margin:"0 10px"}}/> 
+            <span style={{float: "left", fontSize: '24px'}}>/</span>
+          </>
           );
         })}
-      </span>
+        <Input style={{width:"40px", margin:"0 10px"}}/> 
+      </InputGroup>
     ),
   },
   {
@@ -42,8 +26,8 @@ const columns = [
     key: 'action',
     render: (text, record) => (
       <span>
-        <a>Edit {record.name}</a>
-        <Divider type="vertical" />
+        {/* <a>Edit {record.name}</a> */}
+        {/* <Divider type="vertical" /> */}
         <a>Delete</a>
       </span>
     ),
@@ -52,26 +36,19 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: 'John Brown',
-    accent: 'John.Brown@mm.com',
-    password: 'm123456m',
-    alists: ['A', 'B'],
+    values: ['S', 'M', 'L'],
   },
   {
     key: '2',
-    name: 'John Brown',
-    accent: 'John.Brown@mm.com',
-    password: 'm123456m',
-    alists: ['A', 'B'],
+    values: ['A', 'B'],
   },
   {
     key: '3',
-    name: 'John Brown',
-    accent: 'John.Brown@mm.com',
-    password: 'm123456m',
-    alists: ['A', 'B'],
+    values: ['A', 'B'],
   },
 ];
-export default () => (
-  <Table columns={columns} dataSource={data} />
-);
+export default () => {
+  return (
+    <Table columns={columns} dataSource={data} />
+  );
+}
